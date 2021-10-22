@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
+import steps.CommonSteps;
+import steps.GalleryPageSteps;
+import steps.HomePageSteps;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,11 +16,13 @@ public class SmokeTest {
     }
 
     @Test
-    @DisplayName("Verify home page")
+    @DisplayName("Verify Search results")
     public void verifyHomePage() {
-        open("http://todomvc.com/examples/react/#/");
-        new MainPage().addItem("Clean carpet");
-        System.out.println();
+        final String keyword = "Dress";
+        new CommonSteps().openHomePage();
+        new HomePageSteps().search(keyword);
+        new GalleryPageSteps().verifySearchResults(keyword);
+
     }
 
 }

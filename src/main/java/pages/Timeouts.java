@@ -2,5 +2,5 @@ package pages;
 
 public class Timeouts {
 
-    public static final long ELEMENT_LOAD = 15L;
+    public static final long PAGE_LOAD = 15L;
 }

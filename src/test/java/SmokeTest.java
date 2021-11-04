@@ -3,11 +3,11 @@ import org.junit.jupiter.api.Test;
 import steps.CommonSteps;
 import steps.GalleryPageSteps;
 import steps.HomePageSteps;
-
-import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SmokeTest {
+
+    WebApplication w = new WebApplication();
 
     @Test
     @DisplayName("Check sum")
@@ -19,10 +19,9 @@ public class SmokeTest {
     @DisplayName("Verify Search results")
     public void verifyHomePage() {
         final String keyword = "Dress";
-        new CommonSteps().openHomePage();
-        new HomePageSteps().search(keyword);
-        new GalleryPageSteps().verifySearchResults(keyword);
-
+        w.commonSteps().openHomePage();
+        w.onHomePage().search(keyword);
+        w.onGalleryPage().verifySearchResults(keyword);
     }
 
 }

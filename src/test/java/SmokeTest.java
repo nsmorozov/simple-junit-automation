@@ -1,8 +1,5 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import steps.CommonSteps;
-import steps.GalleryPageSteps;
-import steps.HomePageSteps;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SmokeTest {

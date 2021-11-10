@@ -29,5 +29,4 @@ public class WebApplication {
         }
         return commonSteps;
     }
-
 }

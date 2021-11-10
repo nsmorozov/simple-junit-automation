@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SmokeTest {
 
     WebApplication w = new WebApplication();
+    PetStoreApi api = new PetStoreApi();
 
     @Test
     @DisplayName("Check sum")
@@ -19,6 +20,12 @@ public class SmokeTest {
         w.commonSteps().openHomePage();
         w.onHomePage().search(keyword);
         w.onGalleryPage().verifySearchResults(keyword);
+    }
+
+    @Test
+    @DisplayName("Get pet by id using API")
+    public void getPetbyId() {
+        api.petStoreSteps().getPetById(1);
     }
 
 }
